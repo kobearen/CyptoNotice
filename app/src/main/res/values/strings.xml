@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">CyptoNotice</string>
+    <string name="title_notification_settings">通知設定</string>
+    <string name="edit_high_price">高値</string>
+    <string name="text_high_price">5001000</string>
+    <string name="edit_low_price">低値</string>
+    <string name="text_low_price">3001000</string>
+    <string name="text_yen_bit">円/Bit</string>
+    <string name="text_send_mail">の時に下記アドレスにメールする</string>
+    <string name="edit_mail_address">aaaaaaaa@gmail.com</string>
+    <string name="text_noti">通知</string>
+    <string name="text_price_confirmation">毎日X時に確認</string>
+    <string name="text_current_rate">現在のレート</string>
+    <string name="text_current_bit">5001000</string>
+
+
 </resources>

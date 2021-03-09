@@ -7,14 +7,138 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
-    <TextView
-        android:id="@+id/message"
+    <EditText
+        android:id="@+id/titleNotificationSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MainFragment"
+        android:text="@string/title_notification_settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"/>
+
+    <TextView
+        android:id="@+id/textHighPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_high_price"
+        android:textSize="24dp"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/editHighPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/editHighPrice"
+        app:layout_constraintTop_toBottomOf="@+id/titleNotificationSettings"
+        app:layout_constraintHorizontal_bias="0.1"/>
+
+    <EditText
+        android:id="@+id/editHighPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_high_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textHighPrice" />
+
+    <TextView
+        android:id="@+id/textYenBit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_yen_bit"
+        app:layout_constraintBottom_toBottomOf="@+id/editHighPrice"
+        app:layout_constraintStart_toEndOf="@+id/editHighPrice"
+        app:layout_constraintTop_toTopOf="@+id/editHighPrice" />
+
+    <TextView
+        android:id="@+id/textLowPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_low_price"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/textHighPrice"
+        app:layout_constraintStart_toStartOf="@+id/textHighPrice"
+        app:layout_constraintTop_toBottomOf="@+id/editHighPrice"
+        app:layout_constraintHorizontal_bias="0.1"/>
+
+    <EditText
+        android:id="@+id/editLowPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_low_price"
+        app:layout_constraintStart_toEndOf="@+id/textLowPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/textLowPrice" />
+
+    <TextView
+        android:id="@+id/textLowYenBit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_yen_bit"
+        app:layout_constraintBottom_toBottomOf="@+id/editLowPrice"
+        app:layout_constraintStart_toEndOf="@+id/editLowPrice"
+        app:layout_constraintTop_toTopOf="@+id/editLowPrice" />
+
+    <TextView
+        android:id="@+id/textSendMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_send_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLowPrice" />
+
+    <EditText
+        android:id="@+id/editMailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_mail_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSendMail" />
+
+    <Switch
+        android:id="@+id/switchNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_noti"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMailAddress" />
+
+    <TextView
+        android:id="@+id/textPriceConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_price_confirmation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchNotification" />
+
+    <TextView
+        android:id="@+id/textCurrentRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_current_rate"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPriceConfirmation" />
+
+    <TextView
+        android:id="@+id/textCurrentBit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_current_bit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCurrentRate" />
+
+    <TextView
+        android:id="@+id/textCurrentYenBit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_yen_bit"
+        app:layout_constraintBottom_toBottomOf="@+id/textCurrentBit"
+        app:layout_constraintStart_toEndOf="@+id/textCurrentBit"
+        app:layout_constraintTop_toTopOf="@+id/textCurrentBit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
