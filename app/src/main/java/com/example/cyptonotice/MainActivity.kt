@@ -38,13 +38,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             // override fun onResponse(call: Call, response: Response) = println(response.body()?.string())
-//            override fun onResponse(call: Call, response: Response) {
-//                val jsonText = (response.body()?.string())
-//                val parentJsonObj = JSONObject(jsonText)
-//                val parentJsonArray = parentJsonObj.getJSONArray("mid")
-//                println(parentJsonArray)
-//                // val parentJsonObjStr: String = response.getParameter("mid") 失敗例
-//            }
+            override fun onResponse(call: Call, response: Response) {
+                val jsonText = (response.body()?.string())
+                val parentJsonObj = JSONObject(jsonText)
+                val parentJsonArray = parentJsonObj.getJSONArray("mid")
+                println(parentJsonArray)
+                // val parentJsonObjStr: String = response.getParameter("mid") 失敗例
+            }
 
         })
     }
