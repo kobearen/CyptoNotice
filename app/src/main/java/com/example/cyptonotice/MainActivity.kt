@@ -8,7 +8,8 @@ import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
 
-const val API_URL = "https://bitflyer.com/"
+//const val API_URL = "https://bitflyer.com/"削除
+const val API_URL = "https://bitflyer.com/api/echo/price"//追加
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,8 +42,15 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val jsonText = (response.body()?.string())
                 val parentJsonObj = JSONObject(jsonText)
-                val parentJsonArray = parentJsonObj.getJSONArray("mid")
-                println(parentJsonArray)
+                //val parentJsonArray = parentJsonObj.getJSONArray("mid") 削除
+                val mid = parentJsonObj.getDouble("mid")//追加
+                val ask = parentJsonObj.getDouble("ask")//追加
+                val bid = parentJsonObj.getDouble("bid")//追加
+                //println(parentJsonArray)削除
+                println("${mid}" + mid)//追加
+                println("${ask}" + ask)//追加
+                println("${bid}" + bid)//追加
+
                 // val parentJsonObjStr: String = response.getParameter("mid") 失敗例
             }
 
