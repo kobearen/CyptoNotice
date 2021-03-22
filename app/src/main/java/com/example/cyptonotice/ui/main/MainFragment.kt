@@ -56,42 +56,44 @@ class MainFragment : Fragment() {
         }
         textCurrentBit.text = currentBit
     }
-    fun onbtnHighClick(){
-        Log.i("NewItemFragment","onbtnHighClick")
+
+    fun onbtnHighClick() {
+        Log.i("NewItemFragment", "onbtnHighClick")
         // ボタン押下時の処理
     }
-    fun onbtnLowClick(){
-        Log.i("NewItemFragment","onbtnLowClick")
+
+    fun onbtnLowClick() {
+        Log.i("NewItemFragment", "onbtnLowClick")
         // ボタン押下時の処理
     }
 
     fun currentRateAPI(url: String) {
-            val request = Builder()
+        val request = Builder()
                 .url(url)
                 .build()
 
-            client.newCall(request).enqueue(object : Callback {
-                override fun onFailure(call: Call, e: IOException) {
-                    println("失敗")
-                }
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                println("失敗")
+            }
 
-                // override fun onResponse(call: Call, response: Response) = println(response.body()?.string())
-                override fun onResponse(call: Call, response: Response) {
-                    val jsonText = (response.body()?.string())
-                    val parentJsonObj = JSONObject(jsonText)
-                    //val parentJsonArray = parentJsonObj.getJSONArray("mid") 削除
-                    val mid = parentJsonObj.getDouble("mid")//追加
-                    val ask = parentJsonObj.getDouble("ask")//追加
-                    val bid = parentJsonObj.getDouble("bid")//追加
-                    //println(parentJsonArray)削除
-                    println("${mid}" + mid)//追加
-                    println("${ask}" + ask)//追加
-                    println("${bid}" + bid)//追加
+            // override fun onResponse(call: Call, response: Response) = println(response.body()?.string())
+            override fun onResponse(call: Call, response: Response) {
+                val jsonText = (response.body()?.string())
+                val parentJsonObj = JSONObject(jsonText)
+                //val parentJsonArray = parentJsonObj.getJSONArray("mid") 削除
+                val mid = parentJsonObj.getDouble("mid")//追加
+                val ask = parentJsonObj.getDouble("ask")//追加
+                val bid = parentJsonObj.getDouble("bid")//追加
+                //println(parentJsonArray)削除
+                println("${mid}" + mid)//追加
+                println("${ask}" + ask)//追加
+                println("${bid}" + bid)//追加
 
-                    currentBit = mid.toString()
-                }
+                currentBit = mid.toString()
+            }
 
-            })
-        }
+        })
+    }
 
 }
