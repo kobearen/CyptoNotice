@@ -1,7 +1,7 @@
 package com.example.cyptonotice
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.cyptonotice.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
