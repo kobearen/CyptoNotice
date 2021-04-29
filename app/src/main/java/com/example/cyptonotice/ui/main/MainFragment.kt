@@ -47,13 +47,16 @@ class MainFragment : Fragment() {
         btnSetHigh.setOnClickListener {
             onbtnHighClick()
         }
+
         btnSetLow.setOnClickListener {
             onbtnLowClick()
         }
+
         btnGetCurrentBit.setOnClickListener {
             currentRateAPI(API_URL)
             textCurrentBit.text = currentBit
         }
+
         textCurrentBit.text = currentBit
     }
 
@@ -89,7 +92,6 @@ class MainFragment : Fragment() {
                 println("${mid}" + mid)//追加
                 println("${ask}" + ask)//追加
                 println("${bid}" + bid)//追加
-
                 currentBit = mid.toString()
             }
 
