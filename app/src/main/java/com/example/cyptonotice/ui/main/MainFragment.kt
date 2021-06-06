@@ -88,7 +88,6 @@ class MainFragment : Fragment() {
                 val mid = parentJsonObj.getDouble("mid")//追加
                 val ask = parentJsonObj.getDouble("ask")//追加
                 val bid = parentJsonObj.getDouble("bid")//追加
-                //println(parentJsonArray)削除
                 println("${mid}" + mid)//追加
                 println("${ask}" + ask)//追加
                 println("${bid}" + bid)//追加
