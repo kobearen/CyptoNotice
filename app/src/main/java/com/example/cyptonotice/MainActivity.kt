@@ -36,11 +36,10 @@ class MainActivity : AppCompatActivity() {
         var count = 0
         runnable = Runnable {
             count++
-            //定期実行するもの
             println("通知の発行")
             notificationAlerm()
-//            runnable?.let { handler.postDelayed(it, 1000*60*60*24) }
-            runnable?.let { handler.postDelayed(it, 10000) }
+//            runnable?.let { handler.postDelayed(it, 1000*60*60*24) } //1日ごと
+            runnable?.let { handler.postDelayed(it, 10000) } //10sごと
         }
         handler.post(runnable!!)
     }
