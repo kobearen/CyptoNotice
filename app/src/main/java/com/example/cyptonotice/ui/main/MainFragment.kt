@@ -63,8 +63,10 @@ class MainFragment : Fragment() {
         // Switchに、状態変更イベントを追加
         switchNotification.setOnCheckedChangeListener { buttonView, isChecked ->
             // 通知がオンの時の挙動
-            (activity as MainActivity?)?.notificationAlerm()
-//            MainActivity().notificationAlerm()
+            if(isChecked){
+                (activity as MainActivity?)?.notificationAlerm()
+            }
+
         }
 
         textCurrentBit.text = currentBit
