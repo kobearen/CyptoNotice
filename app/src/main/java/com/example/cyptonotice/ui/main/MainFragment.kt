@@ -1,17 +1,21 @@
 package com.example.cyptonotice.ui.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.cyptonotice.MainActivity
 import com.example.cyptonotice.R
 import kotlinx.android.synthetic.main.main_fragment.*
-import okhttp3.*
-import okhttp3.Request.*
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Request.Builder
+import okhttp3.Response
 import org.json.JSONObject
 import java.io.IOException
 
@@ -55,6 +59,12 @@ class MainFragment : Fragment() {
         btnGetCurrentBit.setOnClickListener {
             currentRateAPI(API_URL)
             textCurrentBit.text = currentBit
+        }
+        // Switchに、状態変更イベントを追加
+        switchNotification.setOnCheckedChangeListener { buttonView, isChecked ->
+            // 通知がオンの時の挙動
+            (activity as MainActivity?)?.notificationAlerm()
+//            MainActivity().notificationAlerm()
         }
 
         textCurrentBit.text = currentBit
