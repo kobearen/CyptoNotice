@@ -75,6 +75,9 @@ class MainFragment : Fragment() {
     fun onbtnHighClick() {
         Log.i("NewItemFragment", "onbtnHighClick")
         // ボタン押下時の処理
+        // SharedPrefeに既に入っている高値段を削除する
+        // SharedPrefeに高値段を登録する
+        // 通知の有無のif文の条件判定に値を入れる(SharedPrefeで良いかな？)
     }
 
     fun onbtnLowClick() {
