@@ -25,28 +25,28 @@
         android:paddingTop="20dp"
         android:text="@string/edit_high_price"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editHighPrice"
-        app:layout_constraintEnd_toStartOf="@+id/editHighPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/pickerHighPtice"
+        app:layout_constraintEnd_toStartOf="@+id/pickerHighPtice"
         app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintTop_toBottomOf="@+id/titlePriceSettings" />
+        app:layout_constraintTop_toTopOf="@+id/pickerHighPtice" />
 
-    <EditText
-        android:id="@+id/editHighPrice"
+    <NumberPicker
+        android:id="@+id/pickerHighPtice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_high_price"
+        app:layout_constraintTop_toBottomOf="@+id/titlePriceSettings"
         app:layout_constraintBottom_toBottomOf="@+id/textHighPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/textYenBit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_yen_bit"
-        app:layout_constraintBottom_toBottomOf="@+id/editHighPrice"
-        app:layout_constraintStart_toEndOf="@+id/editHighPrice"
-        app:layout_constraintTop_toTopOf="@+id/editHighPrice" />
+        app:layout_constraintBottom_toBottomOf="@+id/pickerHighPtice"
+        app:layout_constraintStart_toEndOf="@+id/pickerHighPtice"
+        app:layout_constraintTop_toTopOf="@+id/pickerHighPtice" />
 
     <Button
         android:id="@+id/btnSetHigh"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textHighPrice"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="@+id/textHighPrice"
-        app:layout_constraintTop_toBottomOf="@+id/editHighPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/pickerHighPtice" />
 
     <EditText
         android:id="@+id/editLowPrice"
