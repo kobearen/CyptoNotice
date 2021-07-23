@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.cyptonotice.MainActivity
 import com.example.cyptonotice.R
+import com.example.cyptonotice.ui.main.MainFragment.Companion.newInstance
 import kotlinx.android.synthetic.main.main_fragment.*
 import okhttp3.Call
 import okhttp3.Callback
@@ -78,6 +79,19 @@ class MainFragment : Fragment() {
         // SharedPrefeに既に入っている高値段を削除する
         // SharedPrefeに高値段を登録する
         // 通知の有無のif文の条件判定に値を入れる(SharedPrefeで良いかな？)
+        //値の設定画面へ
+        val fragmentManager = fragmentManager
+
+        if (fragmentManager != null) {
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            // BackStackを設定
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.replace(R.id.container, SetPriceFragment())
+            fragmentTransaction.commit()
+        }
+
+
+
     }
 
     fun onbtnLowClick() {
