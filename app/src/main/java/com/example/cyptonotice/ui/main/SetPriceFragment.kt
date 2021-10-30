@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.NumberPicker
+import com.example.cyptonotice.MainActivity
 import com.example.cyptonotice.R
+import kotlinx.android.synthetic.main.fragment_set_price.*
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class SetPriceFragment : Fragment() {
 
@@ -28,8 +31,18 @@ class SetPriceFragment : Fragment() {
 //        btnxxx.setOnClickListener {
 //            //
 //        }
+        // Switchに、状態変更イベントを追加
+        switchNotificationHighPrice.setOnCheckedChangeListener { buttonView, isChecked ->
+            // 通知がオンの時の挙動
+            if(isChecked){
+                (activity as MainActivity?)?.notificationAlerm()
+            } else {
+                pickerHighPtice.displayedValues = arrayOf("0")
+            }
+
+        }
         //ドラムロール表示用の配列作成
-        val fruits = arrayOf("りんご", "いちご", "みかん")
+        val fruits = arrayOf("100万円", "200万円", "300万円", "400万円", "500万円")
         //配列のインデックス最小、最大を指定
         pickerHighPtice.minValue = 0
         pickerHighPtice.maxValue = fruits.size - 1

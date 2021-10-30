@@ -58,6 +58,16 @@
         app:layout_constraintStart_toEndOf="@+id/textYenBit"
         app:layout_constraintTop_toTopOf="@+id/textYenBit" />
 
+    <Switch
+        android:id="@+id/switchNotificationLowPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="@string/text_noti"
+        app:layout_constraintEnd_toStartOf="@+id/textLowPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textLowPrice" />
+
     <TextView
         android:id="@+id/textLowPrice"
         android:layout_width="wrap_content"
@@ -66,7 +76,7 @@
         android:text="@string/edit_low_price"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="@+id/textHighPrice"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0."
         app:layout_constraintStart_toStartOf="@+id/textHighPrice"
         app:layout_constraintTop_toBottomOf="@+id/pickerHighPtice" />
 
@@ -98,14 +108,14 @@
         app:layout_constraintTop_toTopOf="@+id/textLowYenBit" />
 
     <Switch
-        android:id="@+id/switchNotification"
+        android:id="@+id/switchNotificationHighPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="@string/text_noti"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textHighPrice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editLowPrice" />
+        app:layout_constraintTop_toTopOf="@+id/textHighPrice" />
 
     <TextView
         android:id="@+id/textPriceConfirmation"
@@ -114,7 +124,8 @@
         android:text="@string/text_price_confirmation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchNotification" />
+        app:layout_constraintTop_toBottomOf="@+id/textLowYenBit"
+        android:paddingTop="50dp"/>
 
 
     <Button

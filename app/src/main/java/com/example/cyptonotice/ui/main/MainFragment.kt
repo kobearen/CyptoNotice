@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.cyptonotice.MainActivity
 import com.example.cyptonotice.R
-import com.example.cyptonotice.ui.main.MainFragment.Companion.newInstance
 import kotlinx.android.synthetic.main.main_fragment.*
 import okhttp3.Call
 import okhttp3.Callback
@@ -20,7 +19,7 @@ import okhttp3.Response
 import org.json.JSONObject
 import java.io.IOException
 
-const val API_URL = "https://bitflyer.com/api/echo/price"//追加
+const val API_URL = "https://bitflyer.com/api/echo/price"
 
 class MainFragment : Fragment() {
 
@@ -33,8 +32,10 @@ class MainFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
@@ -50,7 +51,7 @@ class MainFragment : Fragment() {
         val btnSetLow: Button = view.findViewById(R.id.btnSetLow)
         val btnGetCurrentBit: Button = view.findViewById(R.id.btnGetCurrentBit)
         btnSetHigh.setOnClickListener {
-            onbtnHighClick()
+//            onbtnHighClick()
         }
 
         btnSetLow.setOnClickListener {
@@ -64,13 +65,15 @@ class MainFragment : Fragment() {
         // Switchに、状態変更イベントを追加
         switchNotification.setOnCheckedChangeListener { buttonView, isChecked ->
             // 通知がオンの時の挙動
-            if(isChecked){
+            if (isChecked) {
                 (activity as MainActivity?)?.notificationAlerm()
             }
-
         }
-
         textCurrentBit.text = currentBit
+        val editHighPriceStr = editHighPrice.text
+        if (currentBit.toInt() >= editHighPriceStr.toString().toInt()) {
+            (activity as MainActivity?)?.notificationAlerm()
+        }
     }
 
     fun onbtnHighClick() {
@@ -89,9 +92,6 @@ class MainFragment : Fragment() {
             fragmentTransaction.replace(R.id.container, SetPriceFragment())
             fragmentTransaction.commit()
         }
-
-
-
     }
 
     fun onbtnLowClick() {
@@ -101,8 +101,8 @@ class MainFragment : Fragment() {
 
     fun currentRateAPI(url: String) {
         val request = Builder()
-                .url(url)
-                .build()
+            .url(url)
+            .build()
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -122,8 +122,6 @@ class MainFragment : Fragment() {
                 println("${bid}" + bid)//追加
                 currentBit = mid.toString()
             }
-
         })
     }
-
 }

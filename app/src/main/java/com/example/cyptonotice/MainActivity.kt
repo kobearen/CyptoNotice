@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
                     .replace(R.id.container, MainFragment.newInstance())
                     .commitNow()
         }
-        pushBtn.setOnClickListener {
-            notificationAlerm()
-        }
+//        pushBtn.setOnClickListener {
+//            notificationAlerm()
+//        }
 
         var count = 0
         runnable = Runnable {
