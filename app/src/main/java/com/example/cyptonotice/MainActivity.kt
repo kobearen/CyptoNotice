@@ -8,12 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.cyptonotice.ui.main.MainFragment
-import kotlinx.android.synthetic.main.main_activity.*
 import android.os.Bundle
 import android.os.Handler
-import androidx.core.os.postDelayed
-import com.example.cyptonotice.ui.main.SetPriceFragment
-import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainActivity : AppCompatActivity() {
     private val handler = Handler()
@@ -40,8 +36,8 @@ class MainActivity : AppCompatActivity() {
             count++
             println("通知の発行")
             notificationAlerm()
-//            runnable?.let { handler.postDelayed(it, 1000*60*60*24) } //1日ごと
-            runnable?.let { handler.postDelayed(it, 10000) } //10sごと
+            runnable?.let { handler.postDelayed(it, 1000*60*60*24) } //1日ごと
+//            runnable?.let { handler.postDelayed(it, 10000) } //10sごと
         }
         handler.post(runnable!!)
     }
